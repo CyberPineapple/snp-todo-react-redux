@@ -1,0 +1,21 @@
+.button {
+  color: red;
+  padding: 10px;
+  cursor: pointer;
+  opacity: 0.5;
+  transition: opacity 0.1s;
+}
+
+.button:hover {
+  opacity: 1;
+}
+
+.radio {
+  display: none;
+}
+
+.radio:checked + .button {
+  text-decoration: underline;
+  text-decoration-color: white;
+  opacity: 1;
+}

@@ -1,0 +1,59 @@
+.logo {
+  margin: auto;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  max-width: 600px;
+  width: 100%;
+  min-width: 400px;
+}
+
+.input {
+  display: block;
+  margin: auto;
+  font-size: 30px;
+  padding: 20px;
+  padding-left: 80px;
+  max-width: 600px;
+  width: 100%;
+  min-width: 400px;
+  background-color: #f1f1f1;
+  border: 2px solid #f1f1f1;
+  border-top-left-radius: 30px;
+  border-top-right-radius: 30px;
+}
+
+.input::placeholder {
+  text-align: center;
+  opacity: 0.3;
+}
+
+.input:focus {
+  outline: none;
+}
+
+.ghosts {
+  display: flex;
+  flex-direction: row;
+}
+
+.primalInput {
+  border-radius: 30px;
+  display: block;
+  margin: auto;
+  font-size: 30px;
+  padding: 20px;
+  max-width: 600px;
+  width: 100%;
+  min-width: 400px;
+  background-color: #f1f1f1;
+  border: 2px solid #f1f1f1;
+  outline: none;
+}
+
+.primalInput::placeholder {
+  text-align: center;
+  opacity: 0.3;
+}

@@ -6,7 +6,7 @@ export default class Item extends PureComponent {
   state = {
     isVisibleDeleteButton: false,
     isEditing: false,
-    text: ""
+    itemText: ""
   };
 
   handleMouseOver = () => {
@@ -24,13 +24,13 @@ export default class Item extends PureComponent {
   handleDoubleClick = () => {
     this.setState({
       isEditing: true,
-      text: this.props.value.text
+      itemText: this.props.text
     });
   };
 
   handleInputFieldChange = event => {
     this.setState({
-      text: event.target.value
+      itemText: event.target.value
     });
   };
 
@@ -38,11 +38,11 @@ export default class Item extends PureComponent {
     const {
       editItem,
       deleteItem,
-      value: { id }
+      id
     } = this.props;
-    const { text } = this.state;
-    if (text !== "" && text[0] !== " ") {
-      editItem(id, text);
+    const { itemText } = this.state;
+    if (itemText !== "" && itemText[0] !== " ") {
+      editItem(id, itemText);
       this.setState({
         isEditing: false
       });
@@ -56,11 +56,11 @@ export default class Item extends PureComponent {
       const {
         editItem,
         deleteItem,
-        value: { id }
+        id
       } = this.props;
-      const { text } = this.state;
-      if (text !== "" && text[0] !== " ") {
-        editItem(id, text);
+      const { itemText } = this.state;
+      if (itemText !== "" && itemText[0] !== " ") {
+        editItem(id, itemText);
         this.setState({
           isEditing: false
         });
@@ -72,7 +72,7 @@ export default class Item extends PureComponent {
 
   handleCheckboxChange = () => {
     const {
-      value: { id },
+      id,
       toggleItem
     } = this.props;
     toggleItem(id);
@@ -80,15 +80,15 @@ export default class Item extends PureComponent {
 
   handleDeleteButtonClick = () => {
     const {
-      value: { id },
+      id,
       deleteItem
     } = this.props;
     deleteItem(id);
   };
 
   render() {
-    const { value, isChecked } = this.props;
-    const { isEditing, text, isVisibleDeleteButton } = this.state;
+    const { text, isChecked } = this.props;
+    const { isEditing, itemText, isVisibleDeleteButton } = this.state;
 
     return (
       <li
@@ -106,7 +106,7 @@ export default class Item extends PureComponent {
           className={isChecked ? styles.textCompleted : styles.text}
           onDoubleClick={this.handleDoubleClick}
         >
-          {value.text}
+          {text}
         </label>
         {isVisibleDeleteButton && (
           <button
@@ -119,7 +119,7 @@ export default class Item extends PureComponent {
             type="text"
             className={styles.edit}
             autoFocus
-            value={text}
+            value={itemText}
             onBlur={this.handleInputFieldBlur}
             onChange={this.handleInputFieldChange}
             onKeyPress={this.handleInputFieldKeyPress}

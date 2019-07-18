@@ -41,7 +41,8 @@ export default class TodosList extends PureComponent {
         <ul>
           {itemsToShow.map(value => (
             <Item
-              value={value}
+              text={value.text}
+              id={value.id}
               isChecked={value.completed}
               key={value.id}
               deleteItem={deleteItem}

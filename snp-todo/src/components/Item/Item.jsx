@@ -87,7 +87,7 @@ export default class Item extends PureComponent {
   };
 
   render() {
-    const { value } = this.props;
+    const { value, isChecked } = this.props;
     const { isEditing, text, isVisibleDeleteButton } = this.state;
 
     return (
@@ -99,11 +99,11 @@ export default class Item extends PureComponent {
         <input
           type="checkbox"
           className={styles.checkbox}
-          checked={value.completed}
+          checked={isChecked}
           onChange={this.handleCheckboxChange}
         />
         <label
-          className={value.completed ? styles.textCompleted : styles.text}
+          className={isChecked ? styles.textCompleted : styles.text}
           onDoubleClick={this.handleDoubleClick}
         >
           {value.text}

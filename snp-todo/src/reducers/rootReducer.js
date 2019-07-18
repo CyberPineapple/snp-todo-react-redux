@@ -10,80 +10,58 @@ import {
 } from "../constants/actionsType";
 
 export const rootReducer = (state = initialState, action) => {
-  switch (action.type) {
+  const { type, payload } = action;
+
+  switch (type) {
     case ADD_NEW_ITEM: {
-      return { ...state, itemsList: addNewItem(state, action.payload) };
+      const newList = [...state.itemsList, payload];
+      localStorage.setItem("list", JSON.stringify(newList));
+      return { ...state, itemsList: newList };
     }
     case DELETE_ITEM: {
-      return { ...state, itemsList: deleteItem(state, action.payload) };
+      const newList = state.itemsList.filter(v => v.id !== payload);
+      localStorage.setItem("list", JSON.stringify(newList));
+      return { ...state, itemsList: newList };
     }
     case TOGGLE_ITEM: {
-      return { ...state, itemsList: toggleItem(state, action.payload) };
+      let newList = [...state.itemsList];
+      for (let key in newList) {
+        if (newList[key].id === payload) {
+          newList[key].completed = !newList[key].completed;
+          break;
+        }
+      }
+      localStorage.setItem("list", JSON.stringify(newList));
+      return { ...state, itemsList: newList };
     }
     case TOGGLE_ALL_ITEMS: {
-      return { ...state, itemsList: toggleAllItems(state, action.payload) };
+      let newList = [...state.itemsList];
+      for (let key in newList) {
+        newList[key].completed = payload;
+      }
+      localStorage.setItem("list", JSON.stringify(newList));
+      return { ...state, itemsList: newList };
     }
     case EDIT_ITEM: {
-      return { ...state, itemsList: editItem(state, action.payload) };
+      let newList = [...state.itemsList];
+      for (let key in newList) {
+        if (newList[key].id === payload.id) {
+          newList[key].text = payload.text;
+          break;
+        }
+      }
+      localStorage.setItem("list", JSON.stringify(newList));
+      return { ...state, itemsList: newList };
     }
     case SET_ACTIVE_FILTER: {
-      return { ...state, activeFilter: action.payload };
+      return { ...state, activeFilter: payload };
     }
     case DELETE_COMPLETED_ITEMS: {
-      return { ...state, itemsList: deleteCompletedItems(state) };
+      const newList = state.itemsList.filter(value => !value.completed);
+      localStorage.setItem("list", JSON.stringify(newList));
+      return { ...state, itemsList: newList };
     }
     default:
       return state;
   }
-}
-
-const editItem = (state, value) => {
-  const newList = [...state.itemsList];
-  for (let key in newList) {
-    if (newList[key].id === value.id) {
-      newList[key].text = value.text;
-      break;
-    }
-  }
-  localStorage.setItem("list", JSON.stringify(newList));
-  return newList;
-};
-
-const addNewItem = (state, value) => {
-  const newList = state.itemsList.concat(value);
-  localStorage.setItem("list", JSON.stringify(newList));
-  return newList;
-};
-
-const deleteItem = (state, value) => {
-  const newList = state.itemsList.filter(v => v.id !== value);
-  localStorage.setItem("list", JSON.stringify(newList));
-  return newList;
-};
-
-const toggleItem = (state, value) => {
-  const newList = [...state.itemsList];
-  for (let key in newList) {
-    if (newList[key].id === value) {
-      newList[key].completed = !newList[key].completed;
-      break;
-    }
-  }
-  localStorage.setItem("list", JSON.stringify(newList));
-  return newList;
-};
-
-const toggleAllItems = (state, value) => {
-  let newList = [...state.itemsList];
-  for (let key in newList) {
-    newList[key].completed = value;
-  }
-  localStorage.setItem("list", JSON.stringify(newList));
-  return newList;
-};
-
-const deleteCompletedItems = state => {
-  const newList = state.itemsList.filter(value => !value.completed);
-  localStorage.setItem("list", JSON.stringify(newList));
-  return newList;
 };

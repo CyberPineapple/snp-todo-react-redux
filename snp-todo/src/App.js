@@ -1,15 +1,15 @@
 import React, { Component, Fragment } from "react";
-import Header from "./components/Header/";
-import TodosList from "./components/TodosList/";
-import Footer from "./components/Footer/";
+import HeaderContainer from "./containers/HeaderContainer";
+import FooterContainer from "./containers/FooterContainer";
+import TodosListContainer from "./containers/TodosListContainer";
 
 export default class App extends Component {
   render() {
     return (
       <Fragment>
-        <Header />
-        <TodosList />
-        <Footer />
+        <HeaderContainer />
+        <TodosListContainer />
+        <FooterContainer />
       </Fragment>
     );
   }

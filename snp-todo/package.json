@@ -2,7 +2,7 @@
   "name": "snp-todo",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://cyberpineapple.github.io/snp-todo-react/",
+  "homepage": "https://cyberpineapple.github.io/snp-todo-react-redux/",
   "dependencies": {
     "prop-types": "^15.7.2",
     "react": "^16.8.6",
@@ -24,6 +24,7 @@
   },
   "browserslist": [],
   "devDependencies": {
-    "gh-pages": "^2.0.1"
+    "gh-pages": "^2.0.1",
+    "redux-devtools-extension": "^2.13.8"
   }
 }

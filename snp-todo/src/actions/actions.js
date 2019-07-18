@@ -8,52 +8,52 @@ import {
   DELETE_COMPLETED_ITEMS
 } from "../constants/actionsType";
 
-export const addNewItem = value => {
+export const addNewItemAction = value => {
   return {
     type: ADD_NEW_ITEM,
     payload: value
   };
 };
 
-export const deleteItem = value => {
+export const deleteItemAction = value => {
   return {
     type: DELETE_ITEM,
     payload: value
   };
 };
 
-export const toggleItem = value => {
+export const toggleItemAction = value => {
   return {
     type: TOGGLE_ITEM,
     payload: value
   };
 };
 
-export const toggleAllItems = value => {
+export const toggleAllItemsAction = value => {
   return {
     type: TOGGLE_ALL_ITEMS,
     payload: value
   };
 };
 
-export const editItem = (id, text) => {
+export const editItemAction = (itemID, itemText) => {
   return {
     type: EDIT_ITEM,
     payload: {
-      id: id,
-      text: text
+      id: itemID,
+      text: itemText
     }
   };
 };
 
-export const setActiveFilter = ({ target: { value } }) => {
+export const setActiveFilterAction = (value) => {
   return {
     type: SET_ACTIVE_FILTER,
     payload: value
   };
 };
 
-export const deleteCompletedItems = () => {
+export const deleteCompletedItemsAction = () => {
   return {
     type: DELETE_COMPLETED_ITEMS
   };

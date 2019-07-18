@@ -93,7 +93,7 @@ export default class Item extends PureComponent {
     return (
       <li
         className={styles.block}
-        onMouseEnter={this.handleMouseOver}
+        onMouseOver={this.handleMouseOver}
         onMouseLeave={this.handleMouseOut}
       >
         <input

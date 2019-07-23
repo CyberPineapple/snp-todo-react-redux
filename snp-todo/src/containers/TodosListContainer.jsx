@@ -38,7 +38,7 @@ export default connect(
   state => ({
     itemsList: state.itemsList,
     activeFilter: state.activeFilter,
-    isVisibleComponent: !!state.itemsList.length
+    isVisibleComponent: state.itemsList.length > 0
   }),
   {
     toggleAllItems: toggleAllItemsAction,

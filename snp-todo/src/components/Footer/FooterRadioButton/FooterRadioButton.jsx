@@ -1,26 +1,31 @@
-import React, { Fragment } from "react";
+import React, { Fragment, PureComponent } from "react";
 import styles from "./FooterRadioButton.module.css";
 import PropTypes from "prop-types";
 
-const FooterRadioButton = ({ value, isChecked, changeActiveFilter }) => {
-  const handleChange = event => changeActiveFilter(event.target.value);
+class FooterRadioButton extends PureComponent {
+  handleChange = event => {
+    this.props.onChangeActiveFilter(event.target.value);
+  };
 
-  return (
-    <Fragment>
-      <input
-        type="radio"
-        id={value}
-        value={value}
-        onChange={handleChange}
-        checked={isChecked}
-        className={styles.radio}
-      />
-      <label htmlFor={value} className={styles.button}>
-        {value}
-      </label>
-    </Fragment>
-  );
-};
+  render() {
+    const { value, isChecked } = this.props;
+    return (
+      <Fragment>
+        <input
+          type="radio"
+          id={value}
+          value={value}
+          onChange={this.handleChange}
+          checked={isChecked}
+          className={styles.radio}
+        />
+        <label htmlFor={value} className={styles.button}>
+          {value}
+        </label>
+      </Fragment>
+    );
+  }
+}
 
 FooterRadioButton.propTypes = {
   value: PropTypes.string,

@@ -35,11 +35,7 @@ export default class Item extends PureComponent {
   };
 
   handleInputFieldBlur = () => {
-    const {
-      editItem,
-      deleteItem,
-      id
-    } = this.props;
+    const { editItem, deleteItem, id } = this.props;
     const { itemText } = this.state;
     if (itemText !== "" && itemText[0] !== " ") {
       editItem(id, itemText);
@@ -53,11 +49,7 @@ export default class Item extends PureComponent {
 
   handleInputFieldKeyPress = event => {
     if (event.key === "Enter") {
-      const {
-        editItem,
-        deleteItem,
-        id
-      } = this.props;
+      const { editItem, deleteItem, id } = this.props;
       const { itemText } = this.state;
       if (itemText !== "" && itemText[0] !== " ") {
         editItem(id, itemText);
@@ -71,18 +63,12 @@ export default class Item extends PureComponent {
   };
 
   handleCheckboxChange = () => {
-    const {
-      id,
-      toggleItem
-    } = this.props;
+    const { id, toggleItem } = this.props;
     toggleItem(id);
   };
 
   handleDeleteButtonClick = () => {
-    const {
-      id,
-      deleteItem
-    } = this.props;
+    const { id, deleteItem } = this.props;
     deleteItem(id);
   };
 
@@ -131,11 +117,9 @@ export default class Item extends PureComponent {
 }
 
 Item.propTypes = {
-  value: PropTypes.shape({
-    text: PropTypes.string,
-    completed: PropTypes.bool,
-    id: PropTypes.number
-  }),
+  text: PropTypes.string,
+  id: PropTypes.number,
+  isChecked: PropTypes.bool,
   toggleItem: PropTypes.func,
   deleteItem: PropTypes.func,
   editItem: PropTypes.func

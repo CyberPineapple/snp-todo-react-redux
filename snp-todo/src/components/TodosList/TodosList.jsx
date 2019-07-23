@@ -1,7 +1,7 @@
 import React, { PureComponent } from "react";
 import styles from "./TodosList.module.css";
 import PropTypes from "prop-types";
-import Item from "../Item/";
+import Item from "./Item";
 
 export default class TodosList extends PureComponent {
   handleToggleAll = event => {

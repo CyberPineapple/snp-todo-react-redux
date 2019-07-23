@@ -12,7 +12,7 @@ class HeaderContainer extends Component {
 
 export default connect(
   state => ({
-    isChangedInput: !state.itemsList.length
+    isChangedInput: state.itemsList.length > 0
   }),
   { addNewItem: addNewItemAction }
 )(HeaderContainer);

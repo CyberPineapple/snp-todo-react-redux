@@ -19,7 +19,7 @@ class FooterContainer extends Component {
         <Footer
           isVisibleDeleteButton={isVisibleDeleteButton}
           activeItemsCount={activeItemsCount}
-          deleteCompletedItems={deleteCompletedItems}
+          onDeleteCompletedItems={deleteCompletedItems}
           changeActiveFilter={changeActiveFilter}
           activeFilter={activeFilter}
         />
@@ -33,7 +33,7 @@ export default connect(
     const { itemsList } = state;
     const activeItems = itemsList.filter(value => !value.completed);
     return {
-      isVisibleComponent: !!itemsList.length,
+      isVisibleComponent: itemsList.length > 0,
       activeItemsCount: activeItems.length,
       isVisibleDeleteButton: activeItems.length !== itemsList.length,
       activeFilter: state.activeFilter

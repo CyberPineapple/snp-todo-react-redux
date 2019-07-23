@@ -50,7 +50,7 @@ export default class Header extends PureComponent {
           </div>
         </div>
         <input
-          className={isChangedInput ? header.primalInput : header.input}
+          className={isChangedInput ? header.input : header.primalInput}
           type="text"
           autoFocus
           placeholder="What needs to be done?"

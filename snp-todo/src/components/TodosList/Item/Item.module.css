@@ -19,7 +19,7 @@
   width: 20px;
   height: 20px;
   position: absolute;
-  background-image: url(../../images/da3bd826876f76c.png);
+  background-image: url(../../../images/da3bd826876f76c.png);
   background-size: cover;
   display: block;
 }
@@ -68,7 +68,7 @@
 }
 
 .checkbox:checked::after {
-  background-image: url(../../images/alien_pixel_icon-icons.com_60289.png);
+  background-image: url(../../../images/alien_pixel_icon-icons.com_60289.png);
   background-size: cover;
 }
 

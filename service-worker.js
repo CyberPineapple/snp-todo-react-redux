@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/snp-todo-react-redux/precache-manifest.45f8df395a4925155d0d7835a74f06dc.js"
+  "/snp-todo-react-redux/precache-manifest.7b6d30b1990b72e1c5231c97db0b08bc.js"
 );
 
 self.addEventListener('message', (event) => {

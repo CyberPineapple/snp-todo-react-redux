@@ -5,7 +5,7 @@ import Item from "./Item";
 
 export default class TodosList extends PureComponent {
   handleToggleAll = event => {
-    this.props.toggleAllItems(event.target.checked);
+    this.props.onToggleAllItems(event.target.checked);
   };
 
   getItemList = () => {
@@ -45,9 +45,9 @@ export default class TodosList extends PureComponent {
               id={value.id}
               isChecked={value.completed}
               key={value.id}
-              deleteItem={deleteItem}
-              toggleItem={toggleItem}
-              editItem={editItem}
+              onDeleteItem={deleteItem}
+              onToggleItem={toggleItem}
+              onEditItem={editItem}
             />
           ))}
         </ul>
@@ -61,5 +61,6 @@ TodosList.propTypes = {
   itemsList: PropTypes.array,
   editItem: PropTypes.func,
   toggleItem: PropTypes.func,
-  deleteItem: PropTypes.func
+  deleteItem: PropTypes.func,
+  onToggleAllItems: PropTypes.func,
 };

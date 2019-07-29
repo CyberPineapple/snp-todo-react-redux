@@ -6,7 +6,7 @@ import { addNewItemAction } from "../actions/";
 class HeaderContainer extends Component {
   render() {
     const { isChangedInput, addNewItem } = this.props;
-    return <Header isChangedInput={isChangedInput} addNewItem={addNewItem} />;
+    return <Header isChangedInput={isChangedInput} onAddNewItem={addNewItem} />;
   }
 }
 

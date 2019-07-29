@@ -24,7 +24,7 @@ class TodosListContainer extends Component {
         <TodosList
           activeFilter={activeFilter}
           itemsList={itemsList}
-          toggleAllItems={toggleAllItems}
+          onToggleAllItems={toggleAllItems}
           deleteItem={deleteItem}
           toggleItem={toggleItem}
           editItem={editItem}

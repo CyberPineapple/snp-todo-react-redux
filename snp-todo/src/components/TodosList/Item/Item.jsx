@@ -35,41 +35,41 @@ export default class Item extends PureComponent {
   };
 
   handleInputFieldBlur = () => {
-    const { editItem, deleteItem, id } = this.props;
+    const { onEditItem, onDeleteItem, id } = this.props;
     const { itemText } = this.state;
     if (itemText !== "" && itemText[0] !== " ") {
-      editItem(id, itemText);
+      onEditItem(id, itemText);
       this.setState({
         isEditing: false
       });
     } else {
-      deleteItem(id);
+      onDeleteItem(id);
     }
   };
 
   handleInputFieldKeyPress = event => {
     if (event.key === "Enter") {
-      const { editItem, deleteItem, id } = this.props;
+      const { onEditItem, onDeleteItem, id } = this.props;
       const { itemText } = this.state;
       if (itemText !== "" && itemText[0] !== " ") {
-        editItem(id, itemText);
+        onEditItem(id, itemText);
         this.setState({
           isEditing: false
         });
       } else {
-        deleteItem(id);
+        onDeleteItem(id);
       }
     }
   };
 
   handleCheckboxChange = () => {
-    const { id, toggleItem } = this.props;
-    toggleItem(id);
+    const { id, onToggleItem } = this.props;
+    onToggleItem(id);
   };
 
   handleDeleteButtonClick = () => {
-    const { id, deleteItem } = this.props;
-    deleteItem(id);
+    const { id, onDeleteItem } = this.props;
+    onDeleteItem(id);
   };
 
   render() {
@@ -120,7 +120,7 @@ Item.propTypes = {
   text: PropTypes.string,
   id: PropTypes.number,
   isChecked: PropTypes.bool,
-  toggleItem: PropTypes.func,
-  deleteItem: PropTypes.func,
-  editItem: PropTypes.func
+  onToggleItem: PropTypes.func,
+  onDeleteItem: PropTypes.func,
+  onEditItem: PropTypes.func
 };

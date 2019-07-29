@@ -16,7 +16,7 @@ export default class Header extends PureComponent {
   };
 
   handleKeyPress = event => {
-    const { addNewItem } = this.props;
+    const { onAddNewItem } = this.props;
     const { textOfTheNewItem } = this.state;
     if (
       event.key === "Enter" &&
@@ -24,7 +24,7 @@ export default class Header extends PureComponent {
       textOfTheNewItem[1] !== " " &&
       textOfTheNewItem !== ""
     ) {
-      addNewItem({
+      onAddNewItem({
         text: textOfTheNewItem,
         id: Date.now(),
         completed: false

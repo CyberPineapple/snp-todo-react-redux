@@ -1,19 +1,19 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "d47fc0b018f4f098af1aae5b331b8ca3",
+    "revision": "9506caa984812dc9188f2e8a134b4fc1",
     "url": "/snp-todo-react-redux/index.html"
   },
   {
-    "revision": "8c151aac8dbfb791b88e",
-    "url": "/snp-todo-react-redux/static/css/main.125d22ae.chunk.css"
+    "revision": "7b516a4db2d74b0eb766",
+    "url": "/snp-todo-react-redux/static/css/main.098a7bdc.chunk.css"
   },
   {
-    "revision": "844a46c4cf9aa1c9a153",
-    "url": "/snp-todo-react-redux/static/js/2.f1532841.chunk.js"
+    "revision": "ce95ebeddce09d4f5376",
+    "url": "/snp-todo-react-redux/static/js/2.7dca4427.chunk.js"
   },
   {
-    "revision": "8c151aac8dbfb791b88e",
-    "url": "/snp-todo-react-redux/static/js/main.624f4514.chunk.js"
+    "revision": "7b516a4db2d74b0eb766",
+    "url": "/snp-todo-react-redux/static/js/main.8ec71fb5.chunk.js"
   },
   {
     "revision": "49c4038e147530c12f5d",

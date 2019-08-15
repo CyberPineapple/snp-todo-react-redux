@@ -1,16 +1,16 @@
 {
   "files": {
-    "main.css": "/snp-todo-react-redux/static/css/main.125d22ae.chunk.css",
-    "main.js": "/snp-todo-react-redux/static/js/main.624f4514.chunk.js",
-    "main.js.map": "/snp-todo-react-redux/static/js/main.624f4514.chunk.js.map",
+    "main.css": "/snp-todo-react-redux/static/css/main.098a7bdc.chunk.css",
+    "main.js": "/snp-todo-react-redux/static/js/main.8ec71fb5.chunk.js",
+    "main.js.map": "/snp-todo-react-redux/static/js/main.8ec71fb5.chunk.js.map",
     "runtime~main.js": "/snp-todo-react-redux/static/js/runtime~main.7064e495.js",
     "runtime~main.js.map": "/snp-todo-react-redux/static/js/runtime~main.7064e495.js.map",
-    "static/js/2.f1532841.chunk.js": "/snp-todo-react-redux/static/js/2.f1532841.chunk.js",
-    "static/js/2.f1532841.chunk.js.map": "/snp-todo-react-redux/static/js/2.f1532841.chunk.js.map",
+    "static/js/2.7dca4427.chunk.js": "/snp-todo-react-redux/static/js/2.7dca4427.chunk.js",
+    "static/js/2.7dca4427.chunk.js.map": "/snp-todo-react-redux/static/js/2.7dca4427.chunk.js.map",
     "index.html": "/snp-todo-react-redux/index.html",
-    "precache-manifest.7b6d30b1990b72e1c5231c97db0b08bc.js": "/snp-todo-react-redux/precache-manifest.7b6d30b1990b72e1c5231c97db0b08bc.js",
+    "precache-manifest.2ef0669ea8674bd111e210a183e68d1e.js": "/snp-todo-react-redux/precache-manifest.2ef0669ea8674bd111e210a183e68d1e.js",
     "service-worker.js": "/snp-todo-react-redux/service-worker.js",
-    "static/css/main.125d22ae.chunk.css.map": "/snp-todo-react-redux/static/css/main.125d22ae.chunk.css.map",
+    "static/css/main.098a7bdc.chunk.css.map": "/snp-todo-react-redux/static/css/main.098a7bdc.chunk.css.map",
     "static/media/TodosList.module.css": "/snp-todo-react-redux/static/media/8bit-vremya-sutki-noch-more-2339.cf001d50.jpg",
     "static/media/index.css": "/snp-todo-react-redux/static/media/Dited.f1422591.otf",
     "static/media/Item.module.css": "/snp-todo-react-redux/static/media/da3bd826876f76c.b7a6d8a7.png"

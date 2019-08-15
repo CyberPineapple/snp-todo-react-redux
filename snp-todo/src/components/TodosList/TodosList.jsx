@@ -1,7 +1,9 @@
 import React, { PureComponent } from "react";
 import styles from "./TodosList.module.css";
+import animation from "./Animation.module.css";
 import PropTypes from "prop-types";
 import Item from "./Item";
+import { CSSTransition, TransitionGroup } from "react-transition-group";
 
 export default class TodosList extends PureComponent {
   handleToggleAll = event => {
@@ -38,19 +40,25 @@ export default class TodosList extends PureComponent {
           checked={itemsList.length === listCompleted.length}
           onChange={this.handleToggleAll}
         />
-        <ul>
+        <TransitionGroup>
           {itemsToShow.map(value => (
-            <Item
-              text={value.text}
-              id={value.id}
-              isChecked={value.completed}
+            <CSSTransition
+              in={true}
+              classNames={{ ...animation }}
+              timeout={500}
               key={value.id}
-              onDeleteItem={deleteItem}
-              onToggleItem={toggleItem}
-              onEditItem={editItem}
-            />
+            >
+              <Item
+                text={value.text}
+                id={value.id}
+                isChecked={value.completed}
+                onDeleteItem={deleteItem}
+                onToggleItem={toggleItem}
+                onEditItem={editItem}
+              />
+            </CSSTransition>
           ))}
-        </ul>
+        </TransitionGroup>
       </div>
     );
   }
@@ -62,5 +70,5 @@ TodosList.propTypes = {
   editItem: PropTypes.func,
   toggleItem: PropTypes.func,
   deleteItem: PropTypes.func,
-  onToggleAllItems: PropTypes.func,
+  onToggleAllItems: PropTypes.func
 };
